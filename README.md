@@ -95,7 +95,10 @@ STM32 기반으로 실내·실외의 수위 변화를 감지하고, 위험 단�
 - 간단한 웹 대시보드 또는 PC 모니터링 프로그램 연동
 ## 시연 장면
 
+## Demo Scenes
+
 | 물 유입 감지 | 수위 상승 / 경고 | 리모컨 수동 제어 | 수위 감소 / 복귀 |
 | --- | --- | --- | --- |
-| ![](docs/images/demo1.gif) | ![](docs/images/demo2.gif) | ![](docs/images/demo3.gif) | ![](docs/images/demo4.gif) |
+| ![](images/Animation.gif) | ![](images/Animation2.gif) | ![](images/Animation3.gif) | ![](images/Animation4.gif) |
+
 
