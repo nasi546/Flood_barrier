@@ -218,9 +218,10 @@ python3 raspberry/water_gui.py
 ```
 
 ## 🎬 Demo Scenes
-아래 GIF 경로는 레포에 맞게 조정해 주세요. (예: docs/images/...)
 
-물 유입 감지	수위 감소 / 복귀	리모컨 수동 제어	수위 상승 / 경고
+| 물 유입 감지 | 수위 감소 / 복귀 | 리모컨 수동 제어 | 수위 상승 / 경고 |
+| --- | --- | --- | --- |
+| ![](images/Animation.gif) | ![](images/Animation2.gif) | ![](images/Animation3.gif) | ![](images/Animation4.gif) |
 
 ## 📁 STM32 펌웨어 폴더 설명
 
