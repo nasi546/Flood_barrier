@@ -549,7 +549,7 @@ static void MX_GPIO_Init(void)
   /* Configure IR Receiver Pin (PA8) as EXTI */
   GPIO_InitStruct.Pin = IR_PIN;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;  // 보통 IR 수신기 출력은 오픈컬렉터
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(IR_PORT, &GPIO_InitStruct);
 
 
