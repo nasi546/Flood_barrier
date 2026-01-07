@@ -5,8 +5,8 @@ from mysql.connector import Error
 import time
 
 # ===== UART 설정 =====
-UART_PORT = "/dev/serial0"   # 필요하면 /dev/ttyAMA0, /dev/ttyS0 등으로 변경
-BAUDRATE = 115200            # STM32와 동일하게 맞추기
+UART_PORT = "/dev/serial0"   # 필요하면 변경
+BAUDRATE = 115200            # STM32와 동일하게 수정
 
 # ===== MariaDB 설정 =====
 DB_CONFIG = {
