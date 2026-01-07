@@ -144,7 +144,7 @@ class WaterMonitorApp(tk.Tk):
             self.status_label.config(text="DB 연결 상태: 오류 발생")
             messagebox.showerror("DB 오류", f"DB 접근 중 오류 발생:\n{e}")
 
-        # 자동 새로고침 예약
+        # 자동 새로고침 예약 가능
         self.after(REFRESH_INTERVAL_MS, self.refresh_data)
 
     def on_closing(self):
