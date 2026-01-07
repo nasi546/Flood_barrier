@@ -12,7 +12,7 @@ DB_CONFIG = {
     "charset": "utf8mb4"
 }
 
-REFRESH_INTERVAL_MS = 5000  # 5초마다 새로고침
+REFRESH_INTERVAL_MS = 5000  # 5초마다 리셋
 
 
 def get_connection():
