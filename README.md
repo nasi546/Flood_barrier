@@ -95,7 +95,46 @@ STM32 기반으로 실내·실외의 수위 변화를 감지하고, 위험 단�
 - 간단한 웹 대시보드 또는 PC 모니터링 프로그램 연동
 ## 시연 장면
 
-| 물 유입 감지 | 수위 상승 / 경고 | 리모컨 수동 제어 | 수위 감소 / 복귀 |
-| --- | --- | --- | --- |
-| ![](docs/images/demo1.gif) | ![](docs/images/demo2.gif) | ![](docs/images/demo3.gif) | ![](docs/images/demo4.gif) |
+## Demo Scenes
 
+| 물 유입 감지 | 수위 감소 / 복귀 | 리모컨 수동 제어 | 수위 상승 / 경고 |
+| --- | --- | --- | --- |
+| ![](images/Animation.gif) | ![](images/Animation2.gif) | ![](images/Animation3.gif) | ![](images/Animation4.gif) |
+```mermaid
+flowchart TD
+  A["전원 ON"] --> B["초기화: ADC / LCD / LED / 부저 / 서보 / IR"];
+  B --> C{"모드 선택"};
+  C -->|AUTO| D["AUTO 모드 루프"];
+  C -->|MANUAL| M["MANUAL 모드 루프"];
+
+  D --> E["수위 측정(ADC)"];
+  E --> F["상태 분류: NORMAL / WARNING / FLOOD"];
+  F --> G["LCD 표시: 수위/상태"];
+  F --> H["LED 표시: 정상/주의/위험"];
+  F --> I{"FLOOD 상태?"};
+
+  I -->|YES| J["서보: 차수막 상승"];
+  I -->|NO| K{"복귀 조건 만족? (LOW 이하)"};
+
+  K -->|YES| L["서보: 차수막 하강"];
+  K -->|NO| D;
+  L --> D;
+
+  J --> P{"FLOOD로 처음 진입?"};
+  P -->|YES| N["부저 경고(진입 1회)"];
+  P -->|NO| D;
+  N --> D;
+
+  M --> R["IR 수신"];
+  R --> S{"버튼 입력"};
+  S -->|올리기| T["서보: 차수막 상승"];
+  S -->|내리기| U["서보: 차수막 하강"];
+  S -->|정지| V["서보: 정지"];
+  S -->|비상정지| W["비상정지: 모터 OFF + 경고 유지"];
+  S -->|AUTO 전환| D;
+
+  T --> M;
+  U --> M;
+  V --> M;
+  W --> M;
+```
