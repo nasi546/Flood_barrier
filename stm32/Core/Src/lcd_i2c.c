@@ -7,7 +7,7 @@
 #define LCD_RW        0x00
 #define LCD_RS        0x01
 
-extern I2C_HandleTypeDef hi2c1;  // main.c?? ??? ?? ??? ??
+extern I2C_HandleTypeDef hi2c1;
 
 void lcd_send_raw_cmd(uint8_t cmd);
 void lcd_send_internal(uint8_t data, uint8_t flags);
@@ -75,12 +75,12 @@ void lcd_clear(void) {
 }
 
 void lcd_put_cur(uint8_t row, uint8_t col) {
-    uint8_t row_offsets[] = {0x00, 0x40, 0x14, 0x54};  // 2? ??
+    uint8_t row_offsets[] = {0x00, 0x40, 0x14, 0x54};
     lcd_send_cmd(0x80 | (col + row_offsets[row]));
 }
 
 void lcd_create_char(uint8_t location, uint8_t charmap[]) {
-    location &= 0x07; // ?? 8? ??? ??
+    location &= 0x07;
     lcd_send_cmd(0x40 | (location << 3));
     for (int i = 0; i < 8; i++) {
         lcd_send_data(charmap[i]);
