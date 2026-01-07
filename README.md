@@ -188,7 +188,7 @@ TX/RX는 서로 교차 연결(TX→RX, RX→TX)
 
 ### 2) Raspberry Pi (서버 & GUI)
 (1) 필수 패키지 설치
-```text
+```bash
 코드 복사
 sudo apt update
 sudo apt install -y python3-pip python3-tk mariadb-server
