@@ -81,13 +81,13 @@
 
 ```mermaid
 flowchart LR
-  S[수위 센서] --> MCU[STM32 제어부];
-  MCU -->|UART| RPI[Raspberry Pi];
-  RPI --> DB[(MariaDB)];
-  DB --> GUI[GUI (Tkinter)];
-  MCU --> ACT[서보모터/차수막];
-  MCU --> ALARM[LCD/LED/부저];
-  IR[IR 리모컨] --> MCU;
+  S[수위 센서] --> MCU[STM32 제어부]
+  MCU -->|UART| RPI[Raspberry Pi]
+  RPI --> DB[(MariaDB)]
+  DB --> GUI[GUI (Tkinter)]
+  MCU --> ACT[서보모터/차수막]
+  MCU --> ALARM[LCD/LED/부저]
+  IR[IR 리모컨] --> MCU
 ```
 
 ### (B) STM32 상태 머신(제어 로직)
