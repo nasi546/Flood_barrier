@@ -1,4 +1,4 @@
-# Flood Barrier (스마트 차수막 시스템 & IoT 모니터링)
+# Flood_Barrier (스마트 차수막 시스템 & IoT 모니터링)
 
 ![Flood Barrier Demo](docs/images/flood_barrier_demo.gif)
 
